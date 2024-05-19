@@ -1,6 +1,8 @@
+// Import core-js and regenerator-runtime
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
+// Override structuredClone to ensure compatibility
 global.structuredClone =
   global.structuredClone || require("core-js-pure/features/structured-clone");
 
