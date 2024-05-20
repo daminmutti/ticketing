@@ -13,10 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Clear GitHub Actions Cache
-        run: |
-          sudo rm -rf ~/.npm
-
       - name: Cache Node.js modules
         uses: actions/cache@v3
         with:
