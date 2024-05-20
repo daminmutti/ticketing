@@ -1,18 +1,18 @@
 name: deploy-manifests
 
-on: 
-  push: 
-    branches: 
+on:
+  push:
+    branches:
       - master
     paths:
       - "infra/**"
 
-jobs: 
-  build: 
+jobs:
+  build:
     runs-on: ubuntu-latest
-    steps: 
-      - uses: actions/checkout@v2
-      - uses: digitalocean/doctl1@v2
+    steps:
+      - uses: actions/checkout@v3
+      - uses: digitalocean/action-doctl1@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - run: doctl kubernetes cluster kubeconfig save ticketing
