@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: orders
-          image: rallycoding/orders
+          image: daminmutti/orders
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
@@ -31,6 +31,13 @@ spec:
                 secretKeyRef:
                   name: jwt-secret
                   key: JWT_KEY
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
 ---
 apiVersion: v1
 kind: Service

@@ -14,9 +14,7 @@ spec:
     spec:
       containers:
         - name: payments
-          image: rallycoding/payments
-          ports:
-            - containerPort: 3000
+          image: daminmutti/payments
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
@@ -38,6 +36,13 @@ spec:
                 secretKeyRef:
                   name: stripe-secret
                   key: STRIPE_KEY
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
 ---
 apiVersion: v1
 kind: Service
