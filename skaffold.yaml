@@ -31,7 +31,7 @@ build:
 manifests:
   rawYaml:
     - ./infra/k8s/*
-    - ./infra/k8s-prod/*
+    - ./infra/k8s-dev/*
 deploy:
   kubectl:
     defaultNamespace: default
