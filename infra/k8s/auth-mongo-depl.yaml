@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: auth-mongo
-          image: mongo
+          image: mongo:latest
+          imagePullPolicy: Always
           resources:
             requests:
               memory: "256Mi"

@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: expiration-redis
-          image: redis
+          image: redis:latest
+          imagePullPolicy: Always
           resources:
             requests:
               memory: "256Mi"
