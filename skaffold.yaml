@@ -4,56 +4,18 @@ build:
   artifacts:
     - image: daminmutti/auth
       context: auth
-      sync:
-        manual:
-          - src: src/**/*.ts
-            dest: .
-      docker:
-        dockerfile: Dockerfile
     - image: daminmutti/client
       context: client
-      sync:
-        manual:
-          - src: "**/*.js"
-            dest: .
-      docker:
-        dockerfile: Dockerfile
     - image: daminmutti/tickets
       context: tickets
-      sync:
-        manual:
-          - src: src/**/*.ts
-            dest: .
-      docker:
-        dockerfile: Dockerfile
     - image: daminmutti/orders
       context: orders
-      sync:
-        manual:
-          - src: src/**/*.ts
-            dest: .
-      docker:
-        dockerfile: Dockerfile
     - image: daminmutti/expiration
       context: expiration
-      sync:
-        manual:
-          - src: src/**/*.ts
-            dest: .
-      docker:
-        dockerfile: Dockerfile
     - image: daminmutti/payments
       context: payments
-      sync:
-        manual:
-          - src: src/**/*.ts
-            dest: .
-      docker:
-        dockerfile: Dockerfile
   local:
     push: false
-  tagPolicy:
-    sha256: {}
 manifests:
   rawYaml:
     - ./infra/k8s/*
